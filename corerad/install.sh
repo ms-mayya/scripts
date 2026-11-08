@@ -49,4 +49,4 @@ EOF
 
 systemctl daemon-reload
 systemctl enable --now corerad
-systemctl status coread
+systemctl status corerad
