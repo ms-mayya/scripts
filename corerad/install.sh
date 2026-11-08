@@ -5,8 +5,8 @@ IFACE="${IFACE:-eth0}"
 BIN=/usr/local/bin/corerad
 CONF=/etc/corerad/corerad.toml
 
-apt-get update -q
-apt-get install -y golang-go
+apt-get -qq update >/dev/null
+DEBIAN_FRONTEND=noninteractive apt-get -y -qq install golang-go >/dev/null
 
 tag="$(curl -fsSL https://api.github.com/repos/mdlayher/corerad/releases/latest | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p')"
 src="$(mktemp -d)"; trap 'rm -rf "$src"' EXIT
@@ -48,5 +48,5 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
-systemctl enable corerad
-systemctl restart corerad
+systemctl enable --now corerad
+systemctl status coread
