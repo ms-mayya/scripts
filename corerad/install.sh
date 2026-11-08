@@ -17,7 +17,8 @@ mkdir -p /etc/corerad
 [[ -e "$CONF" ]] || cat > "$CONF" <<EOF
 [[interfaces]]
 name = "$IFACE"
-advertise = false
+advertise = true
+preference = "high"
 
   [[interfaces.rdnss]]
 
