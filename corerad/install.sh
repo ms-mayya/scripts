@@ -35,7 +35,7 @@ After=network.target
 
 [Service]
 Type=notify
-ExecStart=$BIN -c $CONF
+ExecStart=$BIN -c=$CONF
 Restart=on-failure
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW
