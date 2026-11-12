@@ -21,10 +21,6 @@ advertise = true
 preference = "high"
 
   [[interfaces.rdnss]]
-
-[debug]
-address = "localhost:9430"
-prometheus = true
 EOF
 
 cat > /etc/systemd/system/corerad.service <<EOF
