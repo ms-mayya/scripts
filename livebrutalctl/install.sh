@@ -76,5 +76,5 @@ RestartSec=5s
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl daemon-reload
-sudo systemctl enable --now livebrutalctl.service
+systemctl daemon-reload
+systemctl enable --now livebrutalctl.service
